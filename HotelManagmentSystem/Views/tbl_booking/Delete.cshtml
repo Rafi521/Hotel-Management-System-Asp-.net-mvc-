@@ -1,0 +1,105 @@
+﻿@model HotelManagmentSystem.Models.DB.tbl_booking
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h3>Booking</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.customer_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customer_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customer_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customer_phone_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customer_phone_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_from)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_from)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_to)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_to)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.no_of_members)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.no_of_members)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_room.room_number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_room.room_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_payment_type.payment_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_payment_type.payment_type)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            @Html.ActionLink("Back to List", "Index",null,new { @class = "btn btn-info" })
+        </div>
+    }
+</div>

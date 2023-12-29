@@ -1,0 +1,55 @@
+﻿@model IEnumerable<HotelManagmentSystem.Models.DB.tbl_room_type>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<p>
+    <div style="padding-top:3px">
+
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-outline-secondary" })
+    </div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.room_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.room_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.room_capacity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.room_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.room_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.room_capacity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.room_type_id }, new { @class = "btn btn-outline-success" }) 
+            @Html.ActionLink("Details", "Details", new { id=item.room_type_id }, new { @class = "btn btn-outline-warning" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.room_type_id }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>

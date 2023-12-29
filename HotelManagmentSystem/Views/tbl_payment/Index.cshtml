@@ -1,0 +1,55 @@
+﻿@model IEnumerable<HotelManagmentSystem.Models.DB.tbl_payment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Payment</h3>
+
+<p>
+    <div style="padding-top:3px">
+
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-outline-secondary" })
+    </div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.payment_amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_payment_type.payment_type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.payment_amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_payment_type.payment_type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.payment_id }, new { @class = "btn btn-outline-success" })
+            @Html.ActionLink("Details", "Details", new { id=item.payment_id }, new { @class = "btn btn-outline-warning" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.payment_id }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>

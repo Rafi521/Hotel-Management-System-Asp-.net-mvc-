@@ -1,0 +1,583 @@
+﻿@model HotelManagmentSystem.Models.DB.tbl_booking
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Hotel Transylvania</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    @*<link rel="shortcut icon" type="image/x-icon" href="~/Content/ViewContent/img/favicon.png">*@
+    <!-- Place favicon.ico in the root directory -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/Content/ViewContent/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/nice-select.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/flaticon.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/gijgo.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/animate.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/slicknav.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/style.css">
+
+</head>
+
+<body>
+
+
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="@Url.Action("Home", "View")">home</a></li>
+                                        <li><a class="active" href="@Url.Action("CreatedRooms", "View")"> Rooms</a></li>
+                                   
+                                       
+
+
+                                    </ul>
+                                </nav>
+
+                            </div>
+                        </div>
+                        @*<div class="col-xl-2 col-lg-2">
+                                <div class="logo-img">
+                                    <a href="@Url.Action("Home","View")">
+                                        <img src="~/Content/ViewContent/img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>*@
+                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-facebook-square"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="book_btn d-none d-lg-block">
+
+                                    @Html.ActionLink("Book Room Online", "BookRoomOnline", "View", null, new { @class = "btn btn-success" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Hotel Transylvania</h3>
+                                <p>Welcome to the Luxurious Hotel Transylvania</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Escape to a World of Fantasy</h3>
+                                <p>Experience an Enchanting Stay Amongst the Monsters</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Experience the Magic</h3>
+                                <p>Discover the Legendary Hospitality of Hotel Transylvania</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>A Place for Adventure and Fun</h3>
+                                <p>Unveil the Secrets of Hotel Transylvania</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+    <!-- about_area_start -->
+    <div class="about_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5">
+                    <div class="about_info">
+                        <div class="section_title mb-20px">
+                            <span>About Hotel Transylvania</span>
+                            <h3>
+                                A Luxurious Hotel <br>
+                                in the Heart of Transylvania
+                            </h3>
+                        </div>
+                        <p>Welcome to Hotel Transylvania, a one-of-a-kind destination where luxury meets the mystical charm of Transylvania.</p>
+                        <p>Our hotel is nestled amidst the picturesque landscapes and enchanting forests, offering a unique and unforgettable experience to our guests.</p>
+                        <a href="#" class="line-button">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7">
+                    <div class="about_thumb d-flex">
+                        <div class="img_1">
+                            <img src="~/Content/ViewContent/img/about/about_1.png" alt="">
+                        </div>
+                        <div class="img_2">
+                            <img src="~/Content/ViewContent/img/about/about_2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about_area_end -->
+    <!-- offers_area_start -->
+    <!--<div class="offers_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <span>Our Offers</span>
+                        <h3>Ongoing Offers</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="~/Content/ViewContent/img/offers/1.png" alt="">
+                        </div>
+                        <h3>
+                            Up to 35% savings on Club <br>
+                            rooms and Suites
+                        </h3>
+                        <ul>
+                            <li>Luxaries condition</li>
+                            <li>3 Adults & 2 Children size</li>
+                            <li>Sea view side</li>
+                        </ul>
+                        <a class="popup-with-form book_now" href="#test-form" >book now</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="~/Content/ViewContent/img/offers/2.png" alt="">
+                        </div>
+                        <h3>
+                            Up to 35% savings on Club <br>
+                            rooms and Suites
+                        </h3>
+                        <ul>
+                            <li>Luxaries condition</li>
+                            <li>3 Adults & 2 Children size</li>
+                            <li>Sea view side</li>
+                        </ul>
+                        <a class="popup-with-form book_now" href="#test-form">book now</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="~/Content/ViewContent/img/offers/3.png" alt="">
+                        </div>
+                        <h3>
+                            Up to 35% savings on Club <br>
+                            rooms and Suites
+                        </h3>
+                        <ul>
+                            <li>Luxaries condition</li>
+                            <li>3 Adults & 2 Children size</li>
+                            <li>Sea view side</li>
+                        </ul>
+                        <a class="popup-with-form book_now" href="#test-form">book now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- offers_area_end -->
+    <!-- video_area_start -->
+    <div class="video_area video_bg overlay">
+        <div class="video_area_inner text-center">
+            <span>Hotel Transylvania</span>
+            <h3>
+                Relax and Enjoy your <br>
+                Vacation
+            </h3>
+            <a href="https://www.youtube.com/watch?v=vLnPwxZdW4Y" class="video_btn popup-video">
+                <i class="fa fa-play"></i>
+            </a>
+        </div>
+    </div>
+    <!-- video_area_end -->
+    <!-- reservation_info_start -->
+    <div class="reservation_info">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-md-6">
+                    <div class="single_reservation_info">
+                        <h3>
+                            Book Your Stay Now
+                        </h3>
+                        <p>
+                            Welcome to our luxurious hotel! Reserve your room today and enjoy a comfortable and unforgettable stay with us.
+                        </p>
+                        <p>
+                            Our hotel offers top-notch amenities, spacious rooms, and excellent customer service to make your stay truly remarkable.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-6">
+                    <div class="single_reservation_info">
+                        <h3>
+                            How to Reserve
+                        </h3>
+                        <p>
+                            Booking a room is quick and easy. Simply visit our website or give us a call to check room availability and rates.
+                        </p>
+                        <p>
+                            Our friendly staff will assist you throughout the reservation process, ensuring a seamless experience.
+                        </p>
+                        <p>
+                            We can't wait to host you at our hotel and provide you with an exceptional stay.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- reservation_info_end -->
+    <!-- features_room_startt -->
+    <!--<div class="features_room">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <span>Featured Rooms</span>
+                        <h3>Choose a Better Room</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rooms_here">
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/ViewContent/img/rooms/1.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>From Rs.10000.00/night</span>
+                            <h3>Suite</h3>
+                            <span><h4 style="color:white">Master Suites:107,Mini-Suite or Junior Suite:108</h4></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/ViewContent/img/rooms/2.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>From Rs.7000.00/night</span>
+                            <h3>Deluxe Room</h3>
+                            <span><h4 style="color:white">King:106,Queen:105</h4></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/ViewContent/img/rooms/3.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>From Rs.1000.00/night</span>
+                            <h3>Single Room</h3>
+                            <span><h4 style="color:white">Single:101</h4></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="~/Content/ViewContent/img/rooms/4.png" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>From Rs.2000.00/night</span>
+                            <h3>Family Room</h3>
+                            <span><h4 style="color:white">Double:102,Triple:103,Quad:104</h4></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- features_room_end -->
+    <!-- forQuery_start -->
+
+    <div class="forQuery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 col-md-12">
+                    <div class="Query_border">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-6 col-md-6">
+                                <div class="Query_text">
+                                    <p>For Reservation 0r Query?</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="phone_num">
+                                    <a href="#" class="mobile_no">+8801750373032</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- forQuery_end-->
+    <!-- instragram_area_start -->
+    <div class="instragram_area">
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/1.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/2.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/3.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/4.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/5.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- instragram_area_end -->
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Address
+                            </h3>
+                            <p class="footer_text">
+                                Dhaka<br>
+                                Bangladesh
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Reservation
+                            </h3>
+                            <p class="footer_text">
+                                +8801750373032<br>
+                                istehadrafi09@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Navigation
+                            </h3>
+                            <ul>
+                                <li><a href="@Url.Action("Home","View")">Home</a></li>
+                                <li><a href="@Url.Action("Room","View")">Rooms</a></li>
+                                <li><a href="@Url.Action("About","View")">About</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Newsletter
+                            </h3>
+                            <form action="#" class="newsletter_form">
+                                <input type="text" placeholder="Enter your mail">
+                                <button type="submit">Sign Up</button>
+                            </form>
+                            <p class="newsletter_text">Subscribe newsletter to get updates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <!--<div class="col-xl-8 col-md-7 col-lg-9">
+                        <p class="copy_right">-->
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <!--Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <!--</div>-->
+                    <div class="col-xl-4 col-md-5 col-lg-3">
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JS here -->
+    <script src="~/Content/ViewContent/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~/Content/ViewContent/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/ViewContent/js/popper.min.js"></script>
+    <script src="~/Content/ViewContent/js/bootstrap.min.js"></script>
+    <script src="~/Content/ViewContent/js/owl.carousel.min.js"></script>
+    <script src="~/Content/ViewContent/js/isotope.pkgd.min.js"></script>
+    <script src="~/Content/ViewContent/js/ajax-form.js"></script>
+    <script src="~/Content/ViewContent/js/waypoints.min.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.counterup.min.js"></script>
+    <script src="~/Content/ViewContent/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Content/ViewContent/js/scrollIt.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.scrollUp.min.js"></script>
+    <script src="~/Content/ViewContent/js/wow.min.js"></script>
+    <script src="~/Content/ViewContent/js/nice-select.min.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.slicknav.min.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/ViewContent/js/plugins.js"></script>
+    <script src="~/Content/ViewContent/js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="~/Content/ViewContent/js/contact.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.form.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.validate.min.js"></script>
+    <script src="~/Content/ViewContent/js/mail-script.js"></script>
+
+    <script src="~/Content/ViewContent/js/main.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });
+    </script>
+
+
+
+</body>
+
+</html>

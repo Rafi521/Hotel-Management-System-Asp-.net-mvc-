@@ -1,0 +1,96 @@
+﻿@model IEnumerable<HotelManagmentSystem.Models.DB.tbl_booking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<p>
+    <div style="padding-top:3px">
+    @Html.ActionLink("Create New", "Create",null,new {@class="btn btn-outline-secondary" })
+    </div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_id) <!-- Display Booking ID -->
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customer_name)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.customer_address)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.customer_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customer_phone_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_from)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_to)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.no_of_members)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.total_amount)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_room.room_number)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.tbl_payment_type.payment_type)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_id) <!-- Display Booking ID -->
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_name)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.customer_address)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_phone_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_from)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_to)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.no_of_members)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.total_amount)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_room.room_number)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.tbl_payment_type.payment_type)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.booking_id }, new { @class = "btn btn-outline-success" })
+            @Html.ActionLink("Details", "Details", new { id = item.booking_id }, new { @class = "btn btn-outline-warning" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.booking_id }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>

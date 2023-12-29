@@ -1,0 +1,55 @@
+﻿@model IEnumerable<HotelManagmentSystem.Models.DB.tbl_user>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<p>
+    <div style="padding-top:3px">
+
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-outline-secondary" })
+    </div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tbl_user_level.user_type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_user_level.user_type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.userid },new { @class = "btn btn-outline-success" }) 
+            @Html.ActionLink("Details", "Details", new { id=item.userid }, new { @class = "btn btn-outline-warning" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.userid }, new { @class = "btn btn-outline-danger" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,27 @@
+﻿@model HotelManagmentSystem.Models.DB.tbl_payment_type
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h3>Payment Type</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.payment_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.payment_type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.payment_type_id }, new { @class = "btn btn-warning" }) 
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+</p>

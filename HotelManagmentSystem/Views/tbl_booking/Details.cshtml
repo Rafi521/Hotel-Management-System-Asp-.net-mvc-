@@ -1,0 +1,99 @@
+﻿@model HotelManagmentSystem.Models.DB.tbl_booking
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Booking Details</h2>
+<hr />
+<dl class="dl-horizontal">
+    <dd>
+        @Html.DisplayFor(model => model.booking_id) <!-- Display Booking ID -->
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.customer_name)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.customer_name)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.customer_address)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.customer_address)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.customer_email)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.customer_email)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.customer_phone_no)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.customer_phone_no)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.booking_from)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.booking_from)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.booking_to)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.booking_to)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.no_of_members)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.no_of_members)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.total_amount)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.total_amount)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.tbl_room.room_number)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.tbl_room.room_number)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.tbl_payment_type.payment_type)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.tbl_payment_type.payment_type)
+    </dd>
+    <dt>
+        Room Image
+    </dt>
+    <dd>
+        <!-- Displaying the room image using the value from ViewBag.RoomImage -->
+        <img src="@ViewBag.RoomImage" alt="Room Image" width="200" height="150" />
+    </dd>
+</dl>
+
+<h2>Payment Condition</h2>
+<hr />
+<p>@ViewBag.PaymentCondition</p>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.booking_id }, new { @class = "btn btn-warning" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+</p>

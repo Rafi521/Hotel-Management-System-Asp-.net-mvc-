@@ -1,0 +1,188 @@
+﻿@model HotelManagmentSystem.Models.DB.tbl_booking
+
+@{
+    ViewBag.Title = "Online Room Booking";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        /* Add your custom CSS styles here */
+
+        /* Center align the form on the page */
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style form fields */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .control-label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        /* Style submit button */
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+
+        /* Style datepicker */
+        .datepicker {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        /* Other custom styles as needed */
+    </style>
+</head>
+<body>
+    <h2>Online Room Booking</h2>
+
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.customer_name, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.customer_name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.customer_name)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.customer_address, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.customer_address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.customer_address)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.customer_email, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.customer_email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.customer_email)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.customer_phone_no, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.customer_phone_no, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.customer_phone_no)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.booking_from, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.booking_from, new { @class = "form-control datepicker", type = "date" })
+            @Html.ValidationMessageFor(model => model.booking_from)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.booking_to, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.booking_to, new { @class = "form-control datepicker", type = "date" })
+            @Html.ValidationMessageFor(model => model.booking_to)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.payment_type, new { @class = "control-label" })
+            @Html.DropDownListFor(model => model.payment_type, ViewBag.payment_type as SelectList, "- Select Payment Type -", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.payment_type)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.assigned_room, new { @class = "control-label" })
+            @Html.DropDownListFor(model => model.assigned_room, ViewBag.assigned_room as SelectList, "- Select Room -", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.assigned_room)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.no_of_members, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.no_of_members, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.no_of_members)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.total_amount, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.total_amount, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+
+
+        <!-- Add more form fields for other booking details -->
+
+        <div class="form-group">
+            <input type="submit" value="Book Now" class="btn btn-primary" />
+        </div>
+
+        <div class="validation-summary-errors" data-valmsg-summary="true">
+            <ul>
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            </ul>
+        </div>
+
+
+
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (ViewBag.ConflictingBookings != null && ViewBag.ConflictingBookings.Count > 0)
+    {
+        <div class="alert alert-warning">
+            <p>The selected room is not available for the specified period due to the following conflicting bookings:</p>
+            <ul>
+                @foreach (var booking in ViewBag.ConflictingBookings)
+                {
+                    <li>@booking.customer_name - From: @booking.booking_from, To: @booking.booking_to</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <script>
+        // JavaScript code here
+        document.addEventListener('DOMContentLoaded', function () {
+            // Example: Disable submit button until required fields are filled
+            const submitButton = document.querySelector('.btn-primary');
+            const requiredInputs = document.querySelectorAll('.form-control[required]');
+
+            requiredInputs.forEach(input => {
+                input.addEventListener('input', function () {
+                    const allRequiredFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+                    submitButton.disabled = !allRequiredFilled;
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

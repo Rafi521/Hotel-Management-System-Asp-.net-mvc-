@@ -1,0 +1,59 @@
+﻿@model HotelManagmentSystem.Models.DB.tbl_room
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Rooms</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.room_number)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.room_number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.is_Active)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.is_Active)
+        </dd>
+
+        <dt>
+            Booking Status
+        </dt>
+        <dd>
+            @if (Model.tbl_booking_status != null)
+            {
+                @Model.tbl_booking_status.booking_status
+            }
+            else
+            {
+                @:"No Booking Status"
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_room_type.room_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tbl_room_type.room_name)
+        </dd>
+
+        <dt>
+            Room Image
+        </dt>
+        <dd>
+            <img src="@ViewBag.RoomImage" alt="Room Image" />
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.room_id }, new { @class = "btn btn-warning" })
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+</p>

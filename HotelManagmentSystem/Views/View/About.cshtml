@@ -1,0 +1,369 @@
+﻿@model HotelManagmentSystem.Models.DB.tbl_booking
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Montana</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/ViewContent/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/Content/ViewContent/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/nice-select.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/flaticon.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/gijgo.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/animate.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/slicknav.css">
+    <link rel="stylesheet" href="~/Content/ViewContent/css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="@Url.Action("Home", "View")">home</a></li>
+                                        <li><a class="active" href="@Url.Action("CreatedRooms", "View")"> Rooms</a></li>
+                                        <li><a href="@Url.Action("About", "View")">About</a></li>
+                                        <li><a href="@Url.Action("Contact", "View")">Contact</a></li>
+
+
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-facebook-square"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="book_btn d-none d-lg-block">
+                                    @Html.ActionLink("Book Room Online", "BookRoomOnline", "View", null, new { @class = "btn btn-success" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    <!-- bradcam_area_start -->
+    <!-- about_info_area_start -->
+    <div class="about_info_area">
+        <div class="about_active owl-carousel">
+            <div class="single_slider about_bg_1"></div>
+            <div class="single_slider about_bg_1"></div>
+            <div class="single_slider about_bg_1"></div>
+            <div class="single_slider about_bg_1"></div>
+        </div>
+    </div>
+    <!-- about_info_area_start -->
+    <!-- about_main_info_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Hotel Transylvania</h3>
+                                <p>Welcome to the Luxurious Hotel Transylvania</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Escape to a World of Fantasy</h3>
+                                <p>Experience an Enchanting Stay Amongst the Monsters</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Experience the Magic</h3>
+                                <p>Discover the Legendary Hospitality of Hotel Transylvania</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>A Place for Adventure and Fun</h3>
+                                <p>Unveil the Secrets of Hotel Transylvania</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about_main_info_end -->
+    <!-- forQuery_start -->
+    <div class="forQuery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 col-md-12">
+                    <div class="Query_border">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-6 col-md-6">
+                                <div class="Query_text">
+                                    <p>For Reservation 0r Query?</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="phone_num">
+                                    <a href="#" class="mobile_no">+8801750373032</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- forQuery_end-->
+    <!-- instragram_area_start -->
+    <div class="instragram_area">
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/1.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/2.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/3.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/4.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="single_instagram">
+            <img src="~/Content/ViewContent/img/instragram/5.png" alt="">
+            <div class="ovrelay">
+                <a href="#">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- instragram_area_end -->
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Address
+                            </h3>
+                            <p class="footer_text">
+                                Dhaka<br>
+                                Bangladesh
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Reservation
+                            </h3>
+                            <p class="footer_text">
+                                +8801750373032<br>
+                                istehadrafi09@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Navigation
+                            </h3>
+                            <ul>
+                                <li><a href="@Url.Action("Home","View")">Home</a></li>
+                                <li><a href="@Url.Action("Room","View")">Rooms</a></li>
+                                <li><a href="@Url.Action("About","View")">About</a></li>
+                                <li><a href="@Url.Action("Contact","View")">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Newsletter
+                            </h3>
+                            <form action="#" class="newsletter_form">
+                                <input type="text" placeholder="Enter your mail">
+                                <button type="submit">Sign Up</button>
+                            </form>
+                            <p class="newsletter_text">Subscribe newsletter to get updates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <!--<div class="col-xl-8 col-md-7 col-lg-9">
+                        <p class="copy_right">-->
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <!--Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <!--</div>-->
+                    <div class="col-xl-4 col-md-5 col-lg-3">
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_end -->
+    <!-- form itself end -->
+    <!-- JS here -->
+    <script src="~/Content/ViewContent/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~/Content/ViewContent/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/ViewContent/js/popper.min.js"></script>
+    <script src="~/Content/ViewContent/js/bootstrap.min.js"></script>
+    <script src="~/Content/ViewContent/js/owl.carousel.min.js"></script>
+    <script src="~/Content/ViewContent/js/isotope.pkgd.min.js"></script>
+    <script src="~/Content/ViewContent/js/ajax-form.js"></script>
+    <script src="~/Content/ViewContent/js/waypoints.min.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.counterup.min.js"></script>
+    <script src="~/Content/ViewContent/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Content/ViewContent/js/scrollIt.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.scrollUp.min.js"></script>
+    <script src="~/Content/ViewContent/js/wow.min.js"></script>
+    <script src="~/Content/ViewContent/js/nice-select.min.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.slicknav.min.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/ViewContent/js/plugins.js"></script>
+    <script src="~/Content/ViewContent/js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="~/Content/ViewContent/js/contact.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.form.js"></script>
+    <script src="~/Content/ViewContent/js/jquery.validate.min.js"></script>
+    <script src="~/Content/ViewContent/js/mail-script.js"></script>
+
+    <script src="~/Content/ViewContent/js/main.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });
+    </script>
+
+
+</body>
+
+</html>

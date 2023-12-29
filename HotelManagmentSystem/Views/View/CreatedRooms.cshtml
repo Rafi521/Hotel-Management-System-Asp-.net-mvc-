@@ -1,0 +1,70 @@
+﻿@model List<HotelManagmentSystem.Models.DB.tbl_room>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Created Rooms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Created Rooms</h2>
+    <table>
+        <tr>
+            <th>Room Number</th>
+            <th>Room Type</th>
+            <th>Room Image</th>
+            <th>Availability</th>
+        </tr>
+        @foreach (var room in Model)
+        {
+            <tr>
+                <td>@room.room_number</td>
+                <td>@room.tbl_room_type.room_name</td>
+                <td>
+                    <img src="@room.Room_Image" alt="Room Image">
+                </td>
+                <td>
+                    @if (ViewBag.RoomAvailability.ContainsKey(room.room_id))
+                    {
+                        if (ViewBag.RoomAvailability[room.room_id])
+                        {
+                            <span>Available</span>
+                        }
+                        else
+                        {
+                            <span>Not Available</span>
+                        }
+                    }
+                   
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

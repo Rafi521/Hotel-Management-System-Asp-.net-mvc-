@@ -1,0 +1,10 @@
+﻿@model string
+
+@if (!string.IsNullOrEmpty(Model))
+{
+    <img src="@Model" alt="Room Image" />
+}
+else
+{
+    <p>No image available</p>
+}

@@ -1,0 +1,51 @@
+﻿@model HotelManagmentSystem.Models.DB.tbl_room_type
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h3>Rooms Type</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.room_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.room_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.room_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.room_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.room_capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.room_capacity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.room_type_id }, new { @class = "btn btn-warning" }) 
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-info" })
+</p>

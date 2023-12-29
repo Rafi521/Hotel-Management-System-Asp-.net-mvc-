@@ -1,0 +1,111 @@
+﻿@model HotelManagmentSystem.Models.DB.tbl_user
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up HMS</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/ViewContent/img/favicon.png">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <link rel="stylesheet" href="~/Content/LoginContent/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/Content/LoginContent/css/style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+<body>
+
+
+    <section class="sign-in">
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="~/Content/LoginContent/images/signin-image.jpg" alt="sing up image"></figure>
+
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Sign In</h2>
+                    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+
+                        <div class="form-group">
+
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+
+                            @Html.TextBoxFor(x => x.email, null, new { @type = "email", name = "email", id = "email", placeholder = "Your Email" })
+                            @Html.ValidationMessageFor(x => x.email, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            @Html.TextBoxFor(x => x.user_password, null, new { @type = "password", name = "your_pass", id = "your_pass", placeholder = "Password" })
+                            @Html.ValidationMessageFor(x => x.user_password, "", new { @class = "text-danger" })
+
+                        </div>
+                        if (ViewBag.Message != null)
+                        {
+                            <label class="text-danger">@ViewBag.Messager</label>
+
+                        }
+
+
+
+
+
+                        <div class="form-group form-button">
+                            <input type="submit" id="btnAlertMessage" class="form-submit" value="Login" />
+                        </div>
+
+                    }
+                    <div class="social-login">
+                        <span class="social-label">Or login with</span>
+                        <ul class="socials">
+                            <li><a href="https://www.facebook.com"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                            <li><a href="https://www.twitter.com"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                            <li><a href="https://www.gmail.com"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- JS -->
+    <script src="~/Content/LoginContent/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/LoginContent/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/lib/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnAlertMessage").click(function () {
+
+                var e = document.getElementById("email").value;
+                var y = document.getElementById("your_pass").value;
+               
+                if (e =="" && y =="" ) {
+                    swal("Login", "Empty Field", "error");
+                }
+                else {
+                    swal("Login", "Login Success", "success");
+                }
+               
+                
+                
+
+
+            });
+        });
+    </script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
